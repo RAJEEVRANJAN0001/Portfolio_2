@@ -148,7 +148,7 @@ export default function Contact() {
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Email</h3>
                   <a href="mailto:microsoftrajeevranjan@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
-                    microsoftrajeevranjan@gmail.com
+                    rajeevranjanpratapsinghj94@gmail.com
                   </a>
                 </div>
               </div>
