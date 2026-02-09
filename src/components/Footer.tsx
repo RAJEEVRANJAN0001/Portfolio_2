@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer className="py-12 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 relative overflow-hidden">
+    <footer className="py-16 bg-gradient-to-b from-slate-50 to-white dark:from-gray-900/95 dark:to-gray-900/95 border-t border-gray-200/80 dark:border-gray-800/50 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" />
@@ -22,7 +22,7 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
               Rajeev Ranjan Pratap Singh
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               Building reliable AI & web systems for production. Passionate about creating seamless user experiences and robust backend architectures.
             </p>
             <div className="flex space-x-4">
@@ -43,7 +43,7 @@ export default function Footer() {
                 <motion.a
                   key={link}
                   href={`#${link.toLowerCase()}`}
-                  className="block text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2"
+                    className="block text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 flex items-center gap-2"
                   whileHover={{ x: 5 }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-500/50"></span>
@@ -71,10 +71,10 @@ export default function Footer() {
                   key={social.name}
                   href={social.href}
                   target="_blank"
-                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300 group p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50"
+                  className="flex items-center space-x-3 text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 group p-2.5 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800/60"
                   whileHover={{ x: 5 }}
                 >
-                  <span className="text-xl group-hover:scale-110 transition-transform duration-300 text-cyan-500">
+                  <span className="text-xl group-hover:scale-110 transition-transform duration-300 text-cyan-600 dark:text-cyan-500">
                     {/* Simple SVG icons (no emoji) */}
                     {social.name === 'GitHub' && (
                       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
@@ -108,7 +108,7 @@ export default function Footer() {
           transition={{ delay: 0.6, duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-500 dark:text-gray-500 text-sm">
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Rajeev Ranjan Pratap Singh. All rights reserved.
           </p>
         </motion.div>

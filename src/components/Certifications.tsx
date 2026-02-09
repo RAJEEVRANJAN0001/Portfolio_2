@@ -33,7 +33,7 @@ export default function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="py-20 px-4 relative">
+    <section id="certifications" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
         <motion.div 
           className="text-center mb-12" 
@@ -42,10 +42,10 @@ export default function Certifications() {
           transition={{ duration: 0.6 }} 
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
             Certifications & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Achievements</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
             Verified certifications and notable achievements in AI, ML and software engineering.
           </p>
         </motion.div>
@@ -59,10 +59,10 @@ export default function Certifications() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
-              className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all group"
+              className="bg-white/95 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200/60 dark:border-gray-700/50 rounded-2xl p-8 shadow-lg shadow-gray-200/20 dark:shadow-black/10 hover:shadow-xl hover:shadow-cyan-100/20 dark:hover:shadow-black/20 transition-all duration-300 group"
             >
               <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-900/30 dark:to-blue-900/20 text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300 shadow-md shadow-cyan-100/30 dark:shadow-none">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div className="flex-1">
@@ -74,12 +74,12 @@ export default function Certifications() {
                     <span>•</span>
                     <span>{cert.year}</span>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
                     {cert.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {cert.skills.map((s) => (
-                      <span key={s} className="text-xs px-2.5 py-1 bg-gray-100 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 rounded-md font-medium">
+                      <span key={s} className="text-xs px-3 py-1.5 bg-slate-50 dark:bg-gray-700/60 text-gray-600 dark:text-gray-200 rounded-lg font-medium border border-gray-200/60 dark:border-gray-600/40 hover:bg-cyan-50 dark:hover:bg-cyan-900/20 hover:text-cyan-600 dark:hover:text-cyan-300 hover:border-cyan-300 dark:hover:border-cyan-600 transition-all">
                         {s}
                       </span>
                     ))}

@@ -23,6 +23,7 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  letter-spacing: -0.01em;
 }
 
 /* Brand color variables for light/dark themes */
@@ -30,20 +31,29 @@ body {
   --bg: #ffffff;
   --surface: #f8fafc;
   --text: #0f172a;
-  --muted: #6b7280;
-  --primary: #0b1f3a; /* deep navy */
-  --accent: #06b6d4;  /* cyan */
-  --accent-bright: #ffb020; /* warm bright yellow/orange */
+  --muted: #64748b;
+  --primary: #0b1f3a;
+  /* deep navy */
+  --accent: #0891b2;
+  /* cyan-600 for better contrast in light mode */
+  --accent-bright: #7c3aed;
+  /* violet-600 for better contrast in light mode */
 }
 
 [data-theme='dark'] {
-  --bg: #071028;
-  --surface: #071428;
-  --text: #e6eef8;
-  --muted: #94a3b8;
-  --primary: #071a2a;
+  --bg: #030712;
+  /* Deeper, richer dark */
+  --surface: #0f172a;
+  /* Slate-900 */
+  --text: #f1f5f9;
+  /* Brighter text for better contrast */
+  --muted: #cbd5e1;
+  --primary: #1e293b;
+  /* Slate-800 */
   --accent: #06b6d4;
-  --accent-bright: #ffb020;
+  /* Cyan */
+  --accent-bright: #8b5cf6;
+  /* Purple accent for ML theme */
 }
 
 body {
@@ -59,23 +69,33 @@ body {
 
 .btn-outline {
   @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium border;
-  border-color: rgba(15,23,42,0.08);
+  border-color: rgba(15, 23, 42, 0.08);
   color: var(--text);
 }
 
-.muted { color: var(--muted); }
+.muted {
+  color: var(--muted);
+}
 
 /* Bright accent utilities */
-.text-accent-bright { color: var(--accent-bright); }
-.bg-accent-bright { background: linear-gradient(90deg, var(--accent-bright), #ff8a00); }
-.ring-accent-bright { box-shadow: 0 0 0 4px rgba(255,176,32,0.12); }
+.text-accent-bright {
+  color: var(--accent-bright);
+}
+
+.bg-accent-bright {
+  background: linear-gradient(90deg, #8b5cf6, #a78bfa);
+}
+
+.ring-accent-bright {
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.12);
+}
 
 /* iOS Safari specific fixes */
 @supports (-webkit-touch-callout: none) {
   body {
     -webkit-overflow-scrolling: touch;
   }
-  
+
   .ios-fix {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -89,19 +109,20 @@ body {
 }
 
 @layer utilities {
+
   /* Responsive breakpoint utilities */
   .container-responsive {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
+
   .text-responsive {
     @apply text-sm sm:text-base md:text-lg lg:text-xl;
   }
-  
+
   .heading-responsive {
     @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
   }
-  
+
   .subheading-responsive {
     @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
   }
@@ -112,12 +133,12 @@ body {
     min-width: 44px;
     @apply flex items-center justify-center;
   }
-  
+
   /* Animation delays */
   .animation-delay-2000 {
     animation-delay: 2s;
   }
-  
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -142,8 +163,17 @@ body {
 
   /* Star field animation */
   @keyframes twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
   }
 
   .star-twinkle {
@@ -152,8 +182,15 @@ body {
 
   /* Floating animation */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   .float-animation {
@@ -162,11 +199,14 @@ body {
 
   /* Pulse animation */
   @keyframes pulse-glow {
-    0%, 100% { 
-      box-shadow: 0 0 5px rgba(34, 211, 238, 0.3); 
+
+    0%,
+    100% {
+      box-shadow: 0 0 5px rgba(34, 211, 238, 0.3);
     }
-    50% { 
-      box-shadow: 0 0 20px rgba(34, 211, 238, 0.6); 
+
+    50% {
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
     }
   }
 
@@ -176,8 +216,15 @@ body {
 
   /* Gradient text animation */
   @keyframes gradient-shift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
   }
 
   .gradient-text-animated {
@@ -200,7 +247,7 @@ body {
       border: 2px solid currentColor !important;
     }
   }
-  
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     * {
@@ -212,11 +259,12 @@ body {
 }
 
 @layer utilities {
+
   /* Animation delays */
   .animation-delay-2000 {
     animation-delay: 2s;
   }
-  
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -241,8 +289,17 @@ body {
 
   /* Star field animation */
   @keyframes twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
   }
 
   .star-twinkle {
@@ -251,8 +308,15 @@ body {
 
   /* Floating animation */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   .float-animation {
@@ -261,10 +325,13 @@ body {
 
   /* Pulse glow effect */
   @keyframes pulse-glow {
-    0%, 100% { 
+
+    0%,
+    100% {
       box-shadow: 0 0 5px rgba(34, 211, 238, 0.5);
     }
-    50% { 
+
+    50% {
       box-shadow: 0 0 20px rgba(34, 211, 238, 0.8), 0 0 30px rgba(168, 85, 247, 0.6);
     }
   }
@@ -275,9 +342,17 @@ body {
 
   /* Gradient text animation */
   @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .gradient-animate {
@@ -324,7 +399,7 @@ body {
   .animation-delay-2000 {
     animation-delay: 2s;
   }
-  
+
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -349,8 +424,17 @@ body {
 
   /* Star field animation */
   @keyframes twinkle {
-    0%, 100% { opacity: 0.3; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.2); }
+
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
   }
 
   .star-twinkle {
@@ -359,8 +443,15 @@ body {
 
   /* Floating animation */
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   .float-animation {
@@ -369,10 +460,13 @@ body {
 
   /* Pulse glow effect */
   @keyframes pulse-glow {
-    0%, 100% { 
+
+    0%,
+    100% {
       box-shadow: 0 0 5px rgba(34, 211, 238, 0.5);
     }
-    50% { 
+
+    50% {
       box-shadow: 0 0 20px rgba(34, 211, 238, 0.8), 0 0 30px rgba(168, 85, 247, 0.6);
     }
   }
@@ -383,9 +477,17 @@ body {
 
   /* Gradient text animation */
   @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .gradient-animate {

@@ -11,6 +11,24 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Creata Mentor - Placement Preparation Platform",
+      year: "2025",
+      description: "A comprehensive, AI-powered placement preparation platform designed to help students ace technical interviews. Features AI chat assistant, mock interviews with detailed feedback, company placement notes, 52+ PDF resources, interactive quizzes, and personalized study planning.",
+      technologies: ["React 18", "Vite", "Express.js", "Node.js", "Google Gemini 2.5 Flash", "Tailwind CSS", "React Router 6"],
+      achievements: [
+        "AI-powered chat assistant with context-aware responses",
+        "Mock interview system with role-specific questions",
+        "52+ comprehensive PDF notes (DSA, System Design, DBMS, OS)",
+        "Interactive quizzes and learning roadmaps",
+        "Secure backend architecture protecting API keys"
+      ],
+      category: "AI/Full-stack",
+      gradient: "from-indigo-500 via-purple-500 to-pink-500",
+      glowColor: "indigo",
+      github: "https://github.com/RAJEEVRANJAN0001/Preparation-Platform",
+      live: "https://preparation-platform-1.vercel.app"
+    },
+    {
       title: "Brain Tumor Detection Using AI",
       year: "2024",
       description: "Built a deep learning classification pipeline using ResNet50 and DenseNet121, achieving 99.69% accuracy in identifying brain tumors across multiple MRI scan types.",
@@ -183,16 +201,16 @@ export default function Projects() {
       </div>
 
       {/* Animated Gradient Blobs */}
-      <motion.div 
-        animate={{ 
+      <motion.div
+        animate={{
           scale: [1, 1.2, 1],
           rotate: [0, 90, 0],
         }}
         transition={{ duration: 20, repeat: Infinity }}
         className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
       />
-      <motion.div 
-        animate={{ 
+      <motion.div
+        animate={{
           scale: [1, 1.3, 1],
           rotate: [0, -90, 0],
         }}
@@ -202,11 +220,11 @@ export default function Projects() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <motion.div 
-          className="text-center mb-20" 
-          initial={{ opacity: 0, y: 30 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.8 }} 
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <motion.div
@@ -225,11 +243,11 @@ export default function Projects() {
 
           <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
             Featured{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 animate-gradient">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600">
               Projects
             </span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed">
             Selected projects that demonstrate production-grade AI and web engineering.
           </p>
         </motion.div>
@@ -265,14 +283,14 @@ export default function Projects() {
                 }}
                 className="absolute w-full max-w-5xl"
               >
-                <div 
-                  className={`group relative mx-auto bg-white/10 dark:bg-gray-800/30 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/20 dark:border-gray-700/50 shadow-2xl hover:shadow-${projects[currentIndex].glowColor}-500/50 transition-all duration-500`}
+                <div
+                  className={`group relative mx-auto bg-white/95 dark:bg-gray-800/30 backdrop-blur-2xl rounded-3xl overflow-hidden border border-gray-200/60 dark:border-gray-700/40 shadow-xl hover:shadow-2xl transition-all duration-500`}
                   onMouseEnter={() => setHoveredProject(currentIndex)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
                   {/* Gradient Header */}
                   <div className={`h-2 bg-gradient-to-r ${projects[currentIndex].gradient}`} />
-                  
+
                   {/* Animated Border Glow */}
                   <div className={`absolute inset-0 bg-gradient-to-r ${projects[currentIndex].gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`} />
 
@@ -298,8 +316,8 @@ export default function Projects() {
                         <h3 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white leading-tight">
                           {projects[currentIndex].title}
                         </h3>
-                        
-                        <p className="text-gray-700 dark:text-gray-300 text-base md:text-lg leading-relaxed">
+
+                        <p className="text-gray-700 dark:text-gray-200 text-base md:text-lg leading-relaxed">
                           {projects[currentIndex].description}
                         </p>
 
@@ -315,7 +333,7 @@ export default function Projects() {
                                 initial={{ opacity: 0, scale: 0 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: idx * 0.05 }}
-                                className="px-3 py-1.5 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-semibold border border-gray-300 dark:border-gray-500 shadow-sm hover:scale-105 transition-transform"
+                                className="px-3 py-1.5 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700/80 dark:to-gray-600/80 text-gray-800 dark:text-gray-100 rounded-lg text-sm font-semibold border border-gray-200 dark:border-gray-500/50 shadow-sm hover:scale-105 hover:border-cyan-500/40 transition-all"
                               >
                                 {tech}
                               </motion.span>
@@ -334,21 +352,21 @@ export default function Projects() {
                             className={`inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r ${projects[currentIndex].gradient} text-white font-bold shadow-lg hover:shadow-xl transition-all group/btn`}
                           >
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                             </svg>
                             <span>View Code</span>
-                            <motion.svg 
+                            <motion.svg
                               className="w-5 h-5"
                               animate={{ x: [0, 5, 0] }}
                               transition={{ duration: 1.5, repeat: Infinity }}
-                              fill="none" 
-                              stroke="currentColor" 
+                              fill="none"
+                              stroke="currentColor"
                               viewBox="0 0 24 24"
                             >
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </motion.svg>
                           </motion.a>
-                          
+
                           {projects[currentIndex].live && (
                             <motion.a
                               href={projects[currentIndex].live}
@@ -358,12 +376,12 @@ export default function Projects() {
                               whileTap={{ scale: 0.95 }}
                               className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-white font-bold shadow-lg hover:shadow-xl transition-all border-2 border-gray-200 dark:border-gray-600 group/live"
                             >
-                              <motion.svg 
+                              <motion.svg
                                 className="w-5 h-5"
                                 animate={{ scale: [1, 1.2, 1] }}
                                 transition={{ duration: 2, repeat: Infinity }}
-                                fill="none" 
-                                stroke="currentColor" 
+                                fill="none"
+                                stroke="currentColor"
                                 viewBox="0 0 24 24"
                               >
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -393,12 +411,12 @@ export default function Projects() {
                               initial={{ opacity: 0, x: 20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: idx * 0.1 }}
-                              className="flex items-start gap-3 p-4 rounded-xl bg-white/50 dark:bg-gray-700/30 backdrop-blur-sm border border-gray-200 dark:border-gray-600 hover:border-cyan-500/50 dark:hover:border-cyan-500/50 transition-all group/achievement"
+                              className="flex items-start gap-3 p-4 rounded-xl bg-white/80 dark:bg-gray-700/30 backdrop-blur-md border border-gray-200/40 dark:border-gray-600/30 hover:border-cyan-400/50 dark:hover:border-cyan-500/40 transition-all group/achievement shadow-sm hover:shadow-md"
                             >
                               <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r ${projects[currentIndex].gradient} flex items-center justify-center text-white text-xs font-bold group-hover/achievement:scale-110 transition-transform`}>
                                 {idx + 1}
                               </div>
-                              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                              <p className="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
                                 {achievement}
                               </p>
                             </motion.div>
@@ -421,7 +439,7 @@ export default function Projects() {
             whileHover={{ scale: 1.1, x: -5 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => paginate(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl text-gray-800 dark:text-white flex items-center justify-center group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/70 dark:border-gray-700 shadow-lg hover:shadow-xl text-gray-800 dark:text-white flex items-center justify-center group"
           >
             <svg className="w-6 h-6 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -432,7 +450,7 @@ export default function Projects() {
             whileHover={{ scale: 1.1, x: 5 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => paginate(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 shadow-xl hover:shadow-2xl text-gray-800 dark:text-white flex items-center justify-center group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-14 h-14 rounded-full bg-white/90 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/70 dark:border-gray-700 shadow-lg hover:shadow-xl text-gray-800 dark:text-white flex items-center justify-center group"
           >
             <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -448,17 +466,16 @@ export default function Projects() {
               onClick={() => goToSlide(index)}
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
-              className={`rounded-full transition-all duration-300 ${
-                index === currentIndex 
-                  ? `w-12 h-3 bg-gradient-to-r ${projects[currentIndex].gradient}` 
-                  : 'w-3 h-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
-              }`}
+              className={`rounded-full transition-all duration-300 ${index === currentIndex
+                ? `w-12 h-3 bg-gradient-to-r ${projects[currentIndex].gradient}`
+                : 'w-3 h-3 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                }`}
             />
           ))}
         </div>
 
         {/* Project Counter */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-center mt-8"

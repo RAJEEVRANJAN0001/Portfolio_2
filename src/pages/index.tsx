@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import HeroProfessional from '../components/HeroProfessional';
@@ -10,15 +11,22 @@ import Contact from '../components/Contact';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ThemeToggle from '../components/ThemeToggle';
-import StarField from '../components/StarField';
-import AnimeCharacter from '../components/AnimeCharacter';
-import FloatingParticles from '../components/FloatingParticles';
-import CustomCursor from '../components/CustomCursor';
+import MLBackground from '../components/MLBackground';
+import LightBackground from '../components/LightBackground';
 import { useTheme } from '../contexts/ThemeContext';
 
 export default function Home() {
   const { isDark, isLoading } = useTheme();
-  
+
+  // Apply dark class to html element for Tailwind dark mode
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+
   // Show loading screen while theme is being determined
   if (isLoading) {
     return (
@@ -30,13 +38,12 @@ export default function Home() {
       </div>
     );
   }
-  
+
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
-      isDark 
-        ? 'bg-gray-950 text-white' 
-        : 'bg-gray-50 text-gray-900'
-    }`}>
+    <div className={`min-h-screen transition-all duration-700 ${isDark
+      ? 'bg-gray-950 text-gray-100'
+      : 'bg-gradient-to-b from-slate-50 via-white to-slate-50 text-gray-900'
+      }`}>
       <Head>
         <title>Rajeev Ranjan Pratap Singh | AI & ML Developer Portfolio</title>
         <meta name="description" content="Crafting intelligent solutions with AI & ML. Explore my projects, skills, and achievements in artificial intelligence and machine learning." />
@@ -47,10 +54,8 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <StarField />
-      <FloatingParticles />
-      <AnimeCharacter />
-      <CustomCursor />
+      <MLBackground />
+      <LightBackground />
       <ThemeToggle />
       <Navbar />
       <main className="overflow-hidden">

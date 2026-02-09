@@ -53,10 +53,10 @@ export default function Navbar() {
 
   return (
     <motion.nav 
-      className={`fixed top-0 left-0 w-full z-50 border-b transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 border-b transition-all duration-500 ${
         isDark 
-          ? 'bg-gray-900/80 backdrop-blur-md border-gray-800' 
-          : 'bg-white/80 backdrop-blur-md border-gray-200'
+          ? 'bg-gray-900/90 backdrop-blur-xl border-gray-800/50 shadow-lg shadow-black/10' 
+          : 'bg-white/95 backdrop-blur-xl border-gray-200/60 shadow-lg shadow-gray-200/30'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -67,14 +67,14 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#"
-            className="font-bold text-xl sm:text-2xl flex items-center gap-2"
+            className="font-bold text-xl sm:text-2xl flex items-center gap-2.5"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.15 }}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md shadow-cyan-500/20">
               R
             </div>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600 font-extrabold tracking-tight">
               Rajeev
             </span>
           </motion.a>
@@ -85,7 +85,7 @@ export default function Navbar() {
               <motion.a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-300 relative group ${
+                className={`text-sm font-medium transition-all duration-300 relative group py-1 ${
                   isDark ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'
                 }`}
                 initial={{ opacity: 0, y: -20 }}
@@ -93,19 +93,19 @@ export default function Navbar() {
                 transition={{ delay: index * 0.1, duration: 0.6 }}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-600 group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </motion.a>
             ))}
 
             {/* Theme Toggle - Desktop */}
             <motion.button
               onClick={toggleTheme}
-              className={`p-2 rounded-lg transition-colors duration-300 ${
+              className={`p-2.5 rounded-xl transition-all duration-300 ${
                   isDark 
-                    ? 'bg-gray-800 hover:bg-gray-700 text-cyan-400' 
-                    : 'bg-gray-100 hover:bg-gray-200 text-cyan-600'
+                    ? 'bg-gray-800/80 hover:bg-gray-700 text-cyan-400 border border-gray-700/50' 
+                    : 'bg-gray-100 hover:bg-gray-200 text-cyan-600 border border-gray-200'
                 }`}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, rotate: 15 }}
               whileTap={{ scale: 0.95 }}
               aria-label="Toggle theme"
             >

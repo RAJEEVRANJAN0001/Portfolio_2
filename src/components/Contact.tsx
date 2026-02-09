@@ -30,11 +30,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 relative overflow-hidden">
+    <section id="contact" className="py-24 px-4 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[40%] left-[10%] w-72 h-72 bg-purple-500/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-[10%] right-[10%] w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl" />
+        <div className="absolute top-[40%] left-[10%] w-72 h-72 bg-purple-400/8 dark:bg-purple-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-[10%] right-[10%] w-72 h-72 bg-cyan-400/8 dark:bg-cyan-500/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-6xl mx-auto">
@@ -45,10 +45,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }} 
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4">
             Let's Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">Together</span>
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-lg">
             Have a project in mind? Let's discuss how we can build something amazing.
           </p>
         </motion.div>
@@ -59,38 +59,38 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-lg"
+            className="bg-white/95 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200/60 dark:border-gray-700/50 rounded-2xl p-8 shadow-lg shadow-gray-200/25 dark:shadow-black/10 hover:shadow-xl transition-all"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 block mb-2">Name</label>
+                <label className="text-sm font-semibold text-gray-700 dark:text-gray-200 block mb-2">Name</label>
                 <input 
                   value={formData.name} 
                   onChange={(e) => setFormData({...formData, name: e.target.value})} 
                   required 
-                  className="w-full rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none"
+                  className="w-full rounded-xl border border-gray-200/80 dark:border-gray-600/50 bg-slate-50/80 dark:bg-gray-700/40 px-4 py-3.5 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 block mb-2">Email</label>
+                <label className="text-sm font-semibold text-gray-700 dark:text-gray-200 block mb-2">Email</label>
                 <input 
                   type="email" 
                   value={formData.email} 
                   onChange={(e) => setFormData({...formData, email: e.target.value})} 
                   required 
-                  className="w-full rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none"
+                  className="w-full rounded-xl border border-gray-200/80 dark:border-gray-600/50 bg-slate-50/80 dark:bg-gray-700/40 px-4 py-3.5 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="john@example.com"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-gray-700 dark:text-gray-300 block mb-2">Message</label>
+                <label className="text-sm font-semibold text-gray-700 dark:text-gray-200 block mb-2">Message</label>
                 <textarea 
                   value={formData.message} 
                   onChange={(e) => setFormData({...formData, message: e.target.value})} 
                   required 
                   rows={5} 
-                  className="w-full rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700/50 px-4 py-3 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none resize-none"
+                  className="w-full rounded-xl border border-gray-200/80 dark:border-gray-600/50 bg-slate-50/80 dark:bg-gray-700/40 px-4 py-3.5 text-gray-900 dark:text-white focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none resize-none placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -100,7 +100,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 type="submit" 
                 disabled={isSubmitting} 
-                className={`w-full py-4 rounded-lg font-bold text-white shadow-lg transition-all ${
+                className={`w-full py-4 rounded-xl font-bold text-white shadow-lg transition-all ${
                   submitStatus === 'success' 
                     ? 'bg-green-500 hover:bg-green-600 shadow-green-500/30' 
                     : submitStatus === 'error'
@@ -140,35 +140,35 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
+            <div className="bg-white/95 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200/60 dark:border-gray-700/50 rounded-2xl p-8 shadow-lg shadow-gray-200/25 dark:shadow-black/10 hover:shadow-xl transition-all duration-300 group">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-900/30 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-110 transition-transform shadow-sm">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Email</h3>
-                  <a href="mailto:microsoftrajeevranjan@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                  <a href="mailto:microsoftrajeevranjan@gmail.com" className="text-gray-600 dark:text-gray-300 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
                     rajeevranjanpratapsinghj94@gmail.com
                   </a>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800/50 backdrop-blur-sm border border-gray-100 dark:border-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow group">
+            <div className="bg-white/95 dark:bg-gray-800/60 backdrop-blur-xl border border-gray-200/60 dark:border-gray-700/50 rounded-2xl p-8 shadow-lg shadow-gray-200/25 dark:shadow-black/10 hover:shadow-xl transition-all duration-300 group">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform shadow-sm">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-1">Location</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-300">
                     Dehri, Bihar, India
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-8 shadow-lg text-white relative overflow-hidden">
+            <div className="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl p-8 shadow-xl shadow-cyan-500/20 text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl transform translate-x-10 -translate-y-10" />
               <h3 className="text-xl font-bold mb-4 relative z-10">Availability Status</h3>
               <div className="flex items-center gap-3 mb-2 relative z-10">
